@@ -1,0 +1,7 @@
+1,polo,blue,1
+2,dress,white,1
+3,t-shirt,blue,1
+4,dress,orange,2
+5,polo,red,2
+6,dress,blue,2
+7,t-shirt,white,2

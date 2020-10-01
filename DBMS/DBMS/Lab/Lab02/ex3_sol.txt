@@ -1,0 +1,105 @@
+1.create table emp(emp_no int,emp_name varchar(20), doj date, ph_no varchar(10), dept_name varchar(20), designation varchar(20),salary int,gender char(1));
+
+2.LOAD DATA LOCAL INFILE 'data2.txt' INTO table emp COLUMNS TERMINATED BY ',';
+
+3.insert into emp values(2389,'Karan ghosh','2019-03-1','9448980423','Accounts','CA',11500,'F');
+insert into emp(emp_no, emp_name,doj,dept_name,designation,salary) values(2389,'Karan ghosh','2019-03-1','Accounts','CA',11500);
+insert into emp values(6389,'Kamala','2019-03-1','9448980423','Sales','receptionist',1150,'F');
+
+4.select * from emp;
++--------+--------------+------------+------------+-----------+----------------------+--------+
+| emp_no | emp_name     | doj        | ph_no      | dept_name | designation          | salary |
++--------+--------------+------------+------------+-----------+----------------------+--------+
+|   1234 | Sarala       | 2020-01-02 | 9444123456 | Sales     | HR                   |  70000 |
+|   3452 | Amogh        | 2019-01-01 | 9464123456 | Sales     | Sales manager        |  72000 |
+|   4312 | Qasim        | 2019-04-01 | 9444123423 | Sales     | Sales representative |   7000 |
+|   4112 | Swathi       | 2019-04-23 | NULL       | Sales     | Typist               |   3300 |
+|   6693 | Manoj        | 2019-03-01 | 9444125357 | HR        | Marketing            |  17000 |
+|   4345 | Devi kumar   | 2020-01-01 | 9448563456 | HR        | HR                   |  70000 |
+|   5744 | Hari dev     | 2019-03-01 | 9464893456 | Marketing | Receptionist         |   2000 |
+|   7899 | William Jane | 2019-04-12 | NULL       | Marketing | Typist               |   4000 |
+|   3451 | Dennis       | 2019-11-01 | 8244125357 | Marketing | sales representative |   7000 |
+|   2399 | Govind       | 2019-03-01 | 8346123423 | Accounts  | Typist               |   4500 |
+|   4599 | Dhanad       | 2019-04-02 | 8456123423 | Accounts  | Typist               |   4000 |
+|   2399 | Khurana      | 2019-03-01 | 9448903423 | Accounts  | CA                   |  14500 |
+|   4599 | Suraj        | 2019-04-02 | 9426123423 | Accounts  | CA                   |  46000 |
++--------+--------------+------------+------------+-----------+----------------------+--------+
+
+5.select emp_no, emp_name from emp where dept_name like '%s';
++--------+-------------+
+| emp_no | emp_name    |
++--------+-------------+
+|   1234 | Sarala      |
+|   3452 | Amogh       |
+|   4312 | Qasim       |
+|   4112 | Swathi      |
+|   2399 | Govind      |
+|   4599 | Dhanad      |
+|   2399 | Khurana     |
+|   4599 | Suraj       |
+
+6.select emp_no,emp_name from emp where salary between 2000 and 5000;
++--------+--------------+
+| emp_no | emp_name     |
++--------+--------------+
+|   4112 | Swathi       |
+|   5744 | Hari dev     |
+|   7899 | William Jane |
+|   2399 | Govind       |
+|   4599 | Dhanad       |
++--------+--------------+
+
+7.select designation from emp where designation like 'sales%';
++----------------------+
+| designation          |
+
++----------------------+
+| Sales manager        |
+| Sales representative |
+| sales representative |
++----------------------+
+
+8.update emp set salary=25000 where designation='Typist';
+
+9.update emp set ph_no='1122334455' where emp_name like '%ra%';
+
+10.update emp set salary=salary + (0.1 * salary)  where designation='Typist';
+
+11. select * from emp where ph_no is NULL;
++--------+--------------+------------+-------+-----------+-------------+--------+
+| emp_no | emp_name     | doj        | ph_no | dept_name | designation | salary |
++--------+--------------+------------+-------+-----------+-------------+--------+
+|   4112 | Swathi       | 2019-04-23 |  NULL | Sales     | Typist      |   3300 |
+|   7899 | William Jane | 2019-04-12 |  NULL | Marketing | Typist      |   4000 |
++--------+--------------+------------+-------+-----------+-------------+--------+
+
+12.alter table emp modify column gender varchar(6);
+   update emp set gender='Male' where gender='M';
+   update emp set gender='Female' where gender='F';
+
+13. create table dept(dept_name varchar(10),dept_no smallint,primary key(dept_name));
+
+    LOAD DATA LOCAL INFILE 'data2a.txt' INTO table dept COLUMNS TERMINATED BY ',';
+14.alter table emp add primary key(emp_no);
+   delete from emp where emp_name='Govind';
+   delete from emp where emp_name='Dhanad';
+
+   alter table emp drop primary key;
+   alter table emp add primary key(emp_name);
+
+15.alter table emp add foreign key (dept_name) references dept(dept_name);
+
+16.insert into emp values(2339,'Karan','2019-03-1','9448980423','Accs','CA',11500,'F');
+
+17.delete from dept where dept_no=2;
+   show create table emp;
+   alter table emp drop foreign key emp_ibfk_1;
+
+18.show tables;
+
+19.delete from emp where salary>7000;
+
+20.truncate emp;
+
+21.desc emp;
+
