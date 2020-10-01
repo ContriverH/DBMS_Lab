@@ -1,0 +1,16 @@
+insert into customers values(1000,'1989-10-10','m','John','Delhi','India');
+insert into customers values(1100,'1979-01-10','f','Kens','Berlin','Germany');
+insert into customers values(2505,'1960-03-10','f','Kelvin','Hamburg','Germany');
+insert into customers values(1205,'1998-11-10','m','Monk','Delhi','India');
+insert into customers values(1507,'1992-08-10','f','mars','Oslo','norway ');
+insert into customers values(2004,'1966-03-29','f','johny','paris','france');
+insert into customers values(125,'1999-12-10','m','Maggie','Delhi','India');
+insert into customers values(150,'1991-12-10','f','don','Oslo','norway');
+insert into customers values(200,'1968-11-29','f','lambie','paris','france');
+insert into customers values(1105,'1989-10-10','m','manish','Delhi','India');
+insert into customers values(1106,'1979-01-10','f','Kensive','Berlin','Germany');
+insert into customers values(25,'1944-03-10','f','mans','Hamburg','Germany');
+insert into customers values(12,'1996-11-10','m','Monk','Hyderabad','India');
+insert into customers values(15,'1972-08-10','f','mars','goa','India');
+insert into customers values(20,'1966-03-29','f','johny','paris','france');
+insert into customers values(1259,'1999-12-10','m','Maggie','Delhi','India');
